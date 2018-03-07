@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JUI 메모리 테스트</title>
+    <!-- JUI CSS -->
+    <link rel="stylesheet" href="./static/lib/jui/css/jui.css" />
+
+    <script type="text/javascript" src="./static/lib/jui/lib/jquery-1.8.0.min.js"></script>
+    <!-- JUI JS -->
+    <!-- script src="./static/lib/jui/js/jquery.binder.js"></script-->
+    <script src="./static/lib/jui/js/base.js"></script>
+    <script src="./static/lib/jui/js/core.js"></script>
+    <script src="./static/lib/jui/js/ui/dropdown.js"></script>
+    <script src="./static/lib/jui/js/ui/modal.js"></script>
+    <script src="./static/lib/jui/js/uix/table.js"></script>
+    <script src="./static/lib/jui/js/uix/xtable.js"></script>
+    <script src="./static/lib/jui/js/ui/paging.js"></script>
+
+    <script type="text/javascript">
+        var dataList =[
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Song", age: "12", location: "Gwangju" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Yoon", age: "22", location: "Damyang" ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kim", age: "33", location: "Busan"    ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hwang", age: "21", location: "Seoul"  ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Hong", age: "20", location: "Ilsan"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Jung", age: "30", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Park", age: "15", location: "Yeosu"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"},
+            { name: "Kang", age: "32", location: "Seoul"   ,phone: "010-9447-2726", addr: "역곡 한국아파트 102동 108호", book: "유비커스 역전신화"}
+        ];
+
+        jQuery(document).ready(function(){
+
+            $('#btn_1').on('click', function () {
+                juiRoading(dataList);
+            });
+
+            var nums = [2,3,4,5];
+            console.log(nums);
+            var newnum = 1;
+            nums.unshift(newnum);
+            console.log(nums);
+
+            nums = [3,4,5];
+            nums.unshift(newnum,3,[8]);
+            console.log(nums);
+
+        });
+
+        jui.ready(["uix.table", "ui.paging"], function (table,  paging) {
+            table_1 = table("#table_1", {
+                fields: ["name", "age", "location", "phone", "addr", "book"],
+                //sort: [1, 2, 3],
+                data: [],
+                expand: false,
+                scroll: true,
+                scrollHeight: 450,
+                tpl: {
+                    row: jQuery("#table_1_row").html()
+                },
+                event: {
+                    // sort: function (column, e) {
+                    //     juiTableOrderBy(column, e);
+                    // }
+                }
+            });
+
+            paging_1 = paging("#paing_1", {
+                //count 총 로우 개수
+                //pageCount 페이지별 로우 개수
+                //screenCount 페이지번호 개수
+                count: 0,
+                pageCount: jQuery('#mtm_list_row_per_page').val(),
+                screenCount: 10,
+                event: {
+                    page: function(pNo) {
+
+                        openWaitingText();
+                        setTimeout("fn_mtm_getList("+pNo+")",0);
+                    }
+                }
+            });
+
+            juiRoading = function(dataList) {
+                table_1.reset();
+                table_1.update(dataList);
+            };
+        });
+
+
+        // var juiRoading = function(dataList) {
+        //
+        //     // if(table_1.uit instanceof Object){
+        //     //     table_1.reset();
+        //     //     table_1.destroy();
+        //     //     table_1 = null;
+        //     // }
+        //
+        //
+        //
+        //
+        // };
+
+    </script>
+</head>
+<body>
+
+    <button id="btn_1" >버튼</button>
+    <table id="table_1" class="table classic">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>phone</th>
+            <th>addr</th>
+            <th>book</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script id="table_1_row"  data-jui="#table_1" data-tpl="row" type="text/template">
+        <tr>
+            <td><!= name !></td>
+            <td><!= age !></td>
+            <td><!= location !></td>
+            <td><!= phone !></td>
+            <td><!= addr !></td>
+            <td><!= book !></td>
+        </tr>
+    </script>
+</body>
+</html>
